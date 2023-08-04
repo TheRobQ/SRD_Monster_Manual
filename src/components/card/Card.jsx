@@ -7,7 +7,8 @@ import { parseMonsterPropsToArray, parseMonsterAbilities} from '../../utilities/
 const Card = ( {monster, className} ) => {
     const {name} = monster;
     const stringAttributes = parseMonsterPropsToArray(monster);
-    const abilities = parseMonsterAbilities(monster);
+    const monsterAbilities = parseMonsterAbilities(monster, 'abilities');
+    const monsterActions = parseMonsterAbilities(monster, 'actions');
     return (
         <div className={className}>
             <Title 
@@ -21,11 +22,14 @@ const Card = ( {monster, className} ) => {
                 <div key={'attr_' + ind}>
                     <LabelAndDescription 
                         attr={attr} 
+                        attrContainer='statContainer' 
+                        attrLabel='statLabel'
+                        attrText='statText'
                     />
                 </div>
             )}
             )}
-            { abilities.map( ( ability, ind ) => {
+            { monsterAbilities.map( ( ability, ind ) => {
             return (
                 <div key={'ability_' + ind}>
                     <LabelAndDescription 
@@ -34,7 +38,15 @@ const Card = ( {monster, className} ) => {
                 </div>
             )}
             )}
-            
+            { monsterActions.map( ( action, ind ) => {
+            return (
+                <div key={'action_' + ind}>
+                    <LabelAndDescription 
+                        attr={action} 
+                    />
+                </div>
+            )}
+            )}
         </div>
     )
 }

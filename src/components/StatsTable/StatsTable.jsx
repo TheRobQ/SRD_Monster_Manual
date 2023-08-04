@@ -1,10 +1,12 @@
+import './statsTable.css';
+
 const StatsTable = ( { monsterData } ) => {
     const columns = Object.keys(monsterData);
     return (
         <table>
             <thead>
                 <tr>
-                    { columns.map( (stat, i) => <th key={i}>{stat}</th>) }
+                    { columns.map( (stat, i) => <th key={i}>{stat.toUpperCase()}</th>) }
                 </tr>
             </thead>
             <tbody>

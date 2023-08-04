@@ -1,0 +1,14 @@
+.statContainer{
+    margin: 9px 0;
+}
+
+.statLabel{
+    color: #b21818;
+    font-weight: 600;
+
+} 
+
+.statText {
+    color: #313030;
+    font-weight: 500;
+}
