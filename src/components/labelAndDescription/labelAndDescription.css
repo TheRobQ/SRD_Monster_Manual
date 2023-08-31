@@ -4,11 +4,18 @@
 
 .statLabel{
     color: #b21818;
-    font-weight: 600;
-
+    font-weight: 700;
 } 
 
 .statText {
     color: #313030;
     font-weight: 500;
+}
+
+.attrLabel {
+    font-weight: 700;
+}
+
+.attrContainer {
+    margin-bottom: 12px;
 }

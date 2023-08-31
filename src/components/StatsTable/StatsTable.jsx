@@ -3,7 +3,7 @@ import './statsTable.css';
 const StatsTable = ( { monsterData } ) => {
     const columns = Object.keys(monsterData);
     return (
-        <table>
+        <table className="statsTable">
             <thead>
                 <tr>
                     { columns.map( (stat, i) => <th key={i}>{stat.toUpperCase()}</th>) }

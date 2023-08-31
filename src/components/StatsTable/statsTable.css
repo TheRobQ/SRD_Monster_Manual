@@ -2,8 +2,11 @@ table {
     border-collapse: collapse;
     width:95%;
     table-layout: fixed;
-    
+    border-bottom: 1.5px solid darkgray
 }
+
 table, th, td {
     border: 1px solid darkgray
 }
+
+
