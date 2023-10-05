@@ -21,7 +21,7 @@ const Card = ( {monster, className} ) => {
                     monsterData = {monster.stats}
                 />
                 <div className='attributes listSection'>
-                    { monsterAttributes.map( (attr, ind) => {
+                    { monsterAttributes.stringAttributes.map( (attr, ind) => {
                         return ( 
                             <div key={'attr_' + ind}>
                                 <LabelAndDescription 

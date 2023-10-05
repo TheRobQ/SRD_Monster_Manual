@@ -1,18 +1,27 @@
+const organizeMonsterList = data => {
+    console.log(data)
+};
+
 const parseMonsterPropsToArray  = obj => {
     const stringAttributes = [];
-
+    const quickAttributes = [];
     Object.keys(obj).forEach( attribute => {
         if(typeof obj[attribute] === 'string') {
             if(attribute !== 'name') {
                 let strAttribute = attribute.replace('_', ' ');
                 strAttribute = strAttribute.charAt(0).toUpperCase() + strAttribute.slice(1);
                 let attrArray = [strAttribute, obj[attribute]];
-                stringAttributes.push(attrArray)
-            }
-        }
+                
+                if(attribute !== 'alignemnt' && attribute !== 'armor_class' && attribute !== 'hit_points') {
+                    stringAttributes.push(attrArray);
+                } else {
+                    quickAttributes.push(attrArray);
+                }
+            };
+        };
     });
 
-    return stringAttributes;
+    return {stringAttributes: stringAttributes, quickAttributes: quickAttributes};
 };
 
 const parseMonsterAbilities = (obj, property) => {
@@ -47,6 +56,7 @@ const parseLegendaryActions = inputString => {
         return {legendary: '', ability: inputString}
     }
 };
+
 
 export { 
     parseMonsterPropsToArray, 
