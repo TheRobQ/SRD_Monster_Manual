@@ -25,6 +25,14 @@ h1 {
     height: 98%;
 }
 
+.iconHolder {
+    text-align: right;
+}
+
+.icon {
+    cursor: pointer;
+}
+
 .listSection {
     overflow: hidden;
 }

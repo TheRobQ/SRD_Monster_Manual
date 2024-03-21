@@ -1,4 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 import Monsterlist from './components/monsterlist/Monsterlist';
 import TextInput from './components/textInput/TextInput'
 import './App.css';
@@ -43,13 +49,20 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <TextInput type="text"
-       className='monsterSearch'
-       onChangeHandler={onSearchChange}
-       placeholder='Search' />
-      <Monsterlist monsters = {filteredMonsters} />
-    </div>
+    <Router>
+      <div className="App">
+        <TextInput type="text"
+        className='monsterSearch'
+        onChangeHandler={onSearchChange}
+        placeholder='Search' />
+        <Monsterlist monsters = {filteredMonsters} />
+      </div>
+      <Routes>
+        <Route path='/expanded-card'>
+          {/* <ExpandedCard /> */}
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

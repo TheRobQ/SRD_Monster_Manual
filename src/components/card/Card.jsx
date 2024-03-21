@@ -3,6 +3,8 @@ import Title from '../title/Title';
 import StatsTable from '../StatsTable/StatsTable';
 import LabelAndDescription from '../labelAndDescription/LabelAndDescription';
 import { parseMonsterPropsToArray, parseMonsterAbilities } from '../../utilities/utils.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons'
 
 const Card = ( {monster, className} ) => {
     const {name} = monster;
@@ -58,6 +60,9 @@ const Card = ( {monster, className} ) => {
                         )}
                     )}
                 </div>
+            </div>
+            <div className="iconHolder">
+                <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} className='icon'/>
             </div>
         </div>
     )
